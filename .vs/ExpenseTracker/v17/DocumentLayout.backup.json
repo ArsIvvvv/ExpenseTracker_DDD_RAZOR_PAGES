@@ -1,0 +1,125 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\ivlev\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\ExpenseTracker\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{651F404F-6CC6-43CB-9436-2013384B6905}|ExpenseTracker.Web\\ExpenseTracker.Web.csproj|c:\\users\\ivlev\\onedrive\\\u0440\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\expensetracker\\expensetracker.web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{651F404F-6CC6-43CB-9436-2013384B6905}|ExpenseTracker.Web\\ExpenseTracker.Web.csproj|solutionrelative:expensetracker.web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{651F404F-6CC6-43CB-9436-2013384B6905}|ExpenseTracker.Web\\ExpenseTracker.Web.csproj|c:\\users\\ivlev\\onedrive\\\u0440\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\expensetracker\\expensetracker.web\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{651F404F-6CC6-43CB-9436-2013384B6905}|ExpenseTracker.Web\\ExpenseTracker.Web.csproj|solutionrelative:expensetracker.web\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ivlev\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\ExpenseTracker\\ExpenseTracker.Infrastructure\\Migrations\\20250731201400_InitialCreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:ExpenseTracker.Infrastructure\\Migrations\\20250731201400_InitialCreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{651F404F-6CC6-43CB-9436-2013384B6905}|ExpenseTracker.Web\\ExpenseTracker.Web.csproj|c:\\users\\ivlev\\onedrive\\\u0440\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\expensetracker\\expensetracker.web\\pages\\expense\\createexpense.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{651F404F-6CC6-43CB-9436-2013384B6905}|ExpenseTracker.Web\\ExpenseTracker.Web.csproj|solutionrelative:expensetracker.web\\pages\\expense\\createexpense.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ivlev\\AppData\\Roaming\\Microsoft\\UserSecrets\\20e00b5e-33ca-43f5-a70f-3b9d70f0e379\\secrets.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{483AB93F-C4C6-415A-B5D3-7C056676AC18}|ExpenseTracker.Infrastructure\\ExpenseTracker.Infrastructure.csproj|c:\\users\\ivlev\\onedrive\\\u0440\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\expensetracker\\expensetracker.infrastructure\\data\\expensedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{483AB93F-C4C6-415A-B5D3-7C056676AC18}|ExpenseTracker.Infrastructure\\ExpenseTracker.Infrastructure.csproj|solutionrelative:expensetracker.infrastructure\\data\\expensedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "20250731201400_InitialCreate.cs",
+              "DocumentMoniker": "C:\\Users\\ivlev\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\ExpenseTracker\\ExpenseTracker.Infrastructure\\Migrations\\20250731201400_InitialCreate.cs",
+              "RelativeDocumentMoniker": "ExpenseTracker.Infrastructure\\Migrations\\20250731201400_InitialCreate.cs",
+              "ToolTip": "C:\\Users\\ivlev\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\ExpenseTracker\\ExpenseTracker.Infrastructure\\Migrations\\20250731201400_InitialCreate.cs",
+              "RelativeToolTip": "ExpenseTracker.Infrastructure\\Migrations\\20250731201400_InitialCreate.cs",
+              "ViewState": "AgIAADQAAAAAAAAAAAAQwBcAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-31T20:14:00.174Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\ivlev\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\ExpenseTracker\\ExpenseTracker.Web\\appsettings.json",
+              "RelativeDocumentMoniker": "ExpenseTracker.Web\\appsettings.json",
+              "ToolTip": "C:\\Users\\ivlev\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\ExpenseTracker\\ExpenseTracker.Web\\appsettings.json",
+              "RelativeToolTip": "ExpenseTracker.Web\\appsettings.json",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-07-31T20:13:17.142Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "secrets.json",
+              "DocumentMoniker": "C:\\Users\\ivlev\\AppData\\Roaming\\Microsoft\\UserSecrets\\20e00b5e-33ca-43f5-a70f-3b9d70f0e379\\secrets.json",
+              "RelativeDocumentMoniker": "..\\..\\..\\AppData\\Roaming\\Microsoft\\UserSecrets\\20e00b5e-33ca-43f5-a70f-3b9d70f0e379\\secrets.json",
+              "ToolTip": "C:\\Users\\ivlev\\AppData\\Roaming\\Microsoft\\UserSecrets\\20e00b5e-33ca-43f5-a70f-3b9d70f0e379\\secrets.json",
+              "RelativeToolTip": "..\\..\\..\\AppData\\Roaming\\Microsoft\\UserSecrets\\20e00b5e-33ca-43f5-a70f-3b9d70f0e379\\secrets.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-07-31T20:12:06.047Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\ivlev\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\ExpenseTracker\\ExpenseTracker.Web\\Program.cs",
+              "RelativeDocumentMoniker": "ExpenseTracker.Web\\Program.cs",
+              "ToolTip": "C:\\Users\\ivlev\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\ExpenseTracker\\ExpenseTracker.Web\\Program.cs",
+              "RelativeToolTip": "ExpenseTracker.Web\\Program.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAQwCwAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-31T17:34:50.353Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ExpenseDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\ivlev\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\ExpenseTracker\\ExpenseTracker.Infrastructure\\Data\\ExpenseDbContext.cs",
+              "RelativeDocumentMoniker": "ExpenseTracker.Infrastructure\\Data\\ExpenseDbContext.cs",
+              "ToolTip": "C:\\Users\\ivlev\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\ExpenseTracker\\ExpenseTracker.Infrastructure\\Data\\ExpenseDbContext.cs",
+              "RelativeToolTip": "ExpenseTracker.Infrastructure\\Data\\ExpenseDbContext.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAwAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-31T17:25:26.27Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CreateExpense.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\ivlev\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\ExpenseTracker\\ExpenseTracker.Web\\Pages\\Expense\\CreateExpense.cshtml.cs",
+              "RelativeDocumentMoniker": "ExpenseTracker.Web\\Pages\\Expense\\CreateExpense.cshtml.cs",
+              "ToolTip": "C:\\Users\\ivlev\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\ExpenseTracker\\ExpenseTracker.Web\\Pages\\Expense\\CreateExpense.cshtml.cs",
+              "RelativeToolTip": "ExpenseTracker.Web\\Pages\\Expense\\CreateExpense.cshtml.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAkwB8AAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-31T17:22:15.431Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

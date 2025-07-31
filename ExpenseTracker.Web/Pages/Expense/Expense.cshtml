@@ -1,0 +1,56 @@
+﻿@page 
+@model ExpenseTracker.Web.Pages.Expense.ExpenseModel
+@{
+	ViewData["Title"] = "Расходы";
+}
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="toast align-items-center text-white bg-primary border-0" role="alert" aria-live="assertive" aria-atomic="true">
+            @TempData["SuccessMessage"]
+          <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+
+<h1> Расходы </h1>
+
+<div class="container py-5">
+
+
+
+    <form method="get">
+        <label for="categoryName"> Выберите категорию</label>
+        <select id="categoryName" name="CategoryName">
+            <option value="">Все категории</option>
+            @foreach (var category in Model.CategoryList)
+            {
+                <option value="@category" selected="@(category == Model.CategoryName ? "selected": null)">
+                    @category
+                </option>
+            }
+
+        </select>
+        <button type ="submit">Показать </button>
+    </form>
+
+    <table class="table">
+        <tr><th>Описание</th><th>Деньги</th><th>Категория</th><th>Дата</th></tr>
+    @foreach(var expense in Model.Expenses)
+    {
+        <tr>
+            <td>@expense.Description </td>
+            <td >@expense.Money.ToString()</td>
+            <td >@expense.Category.ToString()</td>
+            <td>@expense.Date.ToString() </td>
+            <td class="text-end">
+                    <form method="post" asp-page-handler="Delete" asp-route-id="@expense.Id" asp-route-categoryName="@Model.CategoryName">
+                    <button type="submit" class=" btn btn-sm btn-danger">
+                        <i class=" bi bi-trash"></i> Delete
+                    </button>
+                </form>
+            </td>
+        </tr>
+    }
+    </table>
+
+    
+</div>
