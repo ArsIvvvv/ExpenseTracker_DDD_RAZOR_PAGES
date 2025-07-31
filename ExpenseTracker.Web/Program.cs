@@ -14,11 +14,11 @@ namespace ExpenseTracker.Web
             var builder = WebApplication.CreateBuilder(args);
 
             builder.Services.AddRazorPages();
-          //  builder.Configuration.AddUserSecrets("secrets.json");
-           // var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+            builder.Configuration.AddUserSecrets("secrets.json");
+            var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
             builder.Services.AddDbContext<ExpenseDbContext>(options =>
-            options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"),
+            options.UseSqlServer(connectionString,
             sqlOptions => sqlOptions.MigrationsAssembly("ExpenseTracker.Infrastructure")));
 
             builder.Services.AddScoped<IExpenseRepositoty, ExpenseRepository>();
