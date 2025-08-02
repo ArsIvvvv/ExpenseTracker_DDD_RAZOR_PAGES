@@ -1,0 +1,85 @@
+### Общие системные файлы ###
+.DS_Store
+Thumbs.db
+desktop.ini
+
+### Редакторы и IDE ###
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.vcxitems.filters
+*.opendb
+*.VC.db
+
+# Rider
+.idea/
+*.sdf
+*.DotSettings
+*.dotCover
+
+# VS Code
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/
+
+### Сборка .NET ###
+[Bb]in/
+[Oo]bj/
+artifacts/
+*.nupkg
+*.nuget.props
+*.nuget.targets
+packages/
+TestResults/
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+appsettings.*.json
+
+### Временные файлы ###
+*.log
+*.cache
+*.bak
+*.tmp
+*.swp
+*.swo
+
+### Зависимости ###
+[Nn]ode_modules/
+jspm_packages/
+bower_components/
+
+### Тестирование ###
+coverage/
+*.coverage
+*.coveragexml
+
+### Документация ###
+docs/_site/
+*.chm
+*.pdf
+
+### Базы данных ###
+*.mdf
+*.ldf
+*.sdf
+
+### Другое ###
+*.exe
+*.dll
+*.pdb
+*.xml
+*.cache
+*.log
+*.json.local
+*.dotCover
+*.orig
+*_ReSharper*
+*.resharper
+*.sass-cache/
+__pycache__/
