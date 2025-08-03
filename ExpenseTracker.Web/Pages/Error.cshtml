@@ -1,26 +1,50 @@
 ﻿@page
 @model ErrorModel
 @{
+    Layout = null;
     ViewData["Title"] = "Error";
 }
 
-<h1 class="text-danger">Error.</h1>
-<h2 class="text-danger">An error occurred while processing your request.</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Error</title>
+    <script type="importmap"></script>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/ExpenseTracker.Web.styles.css" asp-append-version="true" />
 
-@if (Model.ShowRequestId)
-{
-    <p>
-        <strong>Request ID:</strong> <code>@Model.RequestId</code>
-    </p>
-}
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-success shadow">
+            <div class="container-fluid">
+                <a class="navbar-brand fw-bold">
+                    💰 ExpenseTracker
+                </a>
+            </div>
+        </nav>
+    </header>
 
-<h3>Development Mode</h3>
-<p>
-    Swapping to the <strong>Development</strong> environment displays detailed information about the error that occurred.
-</p>
-<p>
-    <strong>The Development environment shouldn't be enabled for deployed applications.</strong>
-    It can result in displaying sensitive information from exceptions to end users.
-    For local debugging, enable the <strong>Development</strong> environment by setting the <strong>ASPNETCORE_ENVIRONMENT</strong> environment variable to <strong>Development</strong>
-    and restarting the app.
-</p>
+    <div class="bg-image"
+         style="background-image: url('https://st49.stblizko.ru/images/product/223/396/577_original.jpg');
+            height: 100vh">
+
+        <div class="container flex-grow-1 text-center py-5">
+            <h1 class="display-1 text-dark">404</h1>
+            <h3 class="mb-4"> Страница не найдена.</h3>
+            <a class="btn btn-success" asp-page="/Index"> На главную</a>
+        </div>
+    </div>
+
+    <footer class="border-top footer text-light bg-success">
+        <div class="container">
+            <small>&copy; @DateTime.Now.Year - ExpenseTracker</small>
+        </div>
+    </footer>
+   
+</body>
+</html>
+

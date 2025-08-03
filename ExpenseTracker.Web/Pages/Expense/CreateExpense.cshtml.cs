@@ -24,7 +24,7 @@ namespace ExpenseTracker.Web.Pages.Expense
 
         public async Task <IActionResult> OnGetAsync() {
 
-            var expense =  await _ex.GetAllCategory();
+            var expense =  await _ex.GetAllCategory(HttpContext.RequestAborted);
             if (!expense.IsSuccess) 
             { 
                 ModelState.AddModelError(string.Empty, expense.Error);
@@ -37,7 +37,7 @@ namespace ExpenseTracker.Web.Pages.Expense
         {
             if (!ModelState.IsValid)
             {
-                var expense = await _ex.GetAllCategory();
+                var expense = await _ex.GetAllCategory(HttpContext.RequestAborted);
                 if (!expense.IsSuccess)
                 {
                     ModelState.AddModelError(string.Empty, expense.Error);
@@ -56,7 +56,7 @@ namespace ExpenseTracker.Web.Pages.Expense
 
             };
 
-            await _ex.AddExpenseAsync(command);
+            await _ex.AddExpenseAsync(command, HttpContext.RequestAborted);
             TempData["SuccessMessage"] = "Расход успешно добавлен";
 
             return RedirectToPage("/Expense/Expense");

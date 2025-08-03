@@ -20,31 +20,31 @@ namespace ExpenseTracker.Infrastructure.Repository
             _dbContext = dbContext;
         }
 
-        public async Task AddAsync(Expense expense)
+        public async Task AddAsync(Expense expense, CancellationToken cancellationToken)
         {
             await _dbContext.Expenses.AddAsync(expense); 
-             await _dbContext.SaveChangesAsync();
+             await _dbContext.SaveChangesAsync(cancellationToken);
         }
 
-        public async Task DeleteAsync(Expense expense)
+        public async Task DeleteAsync(Expense expense, CancellationToken cancellationToken)
         {
              _dbContext.Expenses.Remove(expense);
-            await _dbContext.SaveChangesAsync();
+            await _dbContext.SaveChangesAsync(cancellationToken);
         }
 
-        public async Task<IEnumerable<Expense>?> GetAllAsync()
+        public async Task<IEnumerable<Expense>?> GetAllAsync(CancellationToken cancellationToken)
         {
-           return await _dbContext.Expenses.ToListAsync();
+           return await _dbContext.Expenses.ToListAsync(cancellationToken);
         }
 
-        public async Task<List<string>> GetAllAvailableCategoriesAsync()
+        public async Task<List<string>> GetAllAvailableCategoriesAsync(CancellationToken cancellationToken)
         {
-             return await _dbContext.AvailableCategories.Select(c => c.Name).ToListAsync();
+             return await _dbContext.AvailableCategories.Select(c => c.Name).AsNoTracking().ToListAsync(cancellationToken);
         }
 
-        public async Task<Expense?> GetExpenseById(Guid id)
+        public async Task<Expense?> GetExpenseById(Guid id, CancellationToken cancellationToken)
         {
-            return await _dbContext.Expenses.FirstOrDefaultAsync(x => x.Id == id);
+            return await _dbContext.Expenses.FirstOrDefaultAsync(x => x.Id == id, cancellationToken);
         }
     }
 }

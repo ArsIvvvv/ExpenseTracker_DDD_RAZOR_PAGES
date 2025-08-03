@@ -33,6 +33,10 @@ namespace ExpenseTracker.Web
                 
                 app.UseHsts();
             }
+
+
+            app.UseStatusCodePagesWithReExecute("/Error");
+
             app.UseSession();
             app.UseHttpsRedirection();
 

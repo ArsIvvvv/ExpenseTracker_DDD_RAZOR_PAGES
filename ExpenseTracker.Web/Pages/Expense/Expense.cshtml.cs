@@ -29,7 +29,7 @@ namespace ExpenseTracker.Web.Pages.Expense
 
         public async Task<IActionResult> OnGetAsync()
         {
-            var expense = await _ex.GetAllCategory();
+            var expense = await _ex.GetAllCategory(HttpContext.RequestAborted);
             if (!expense.IsSuccess)
             {
                 ModelState.AddModelError(string.Empty, expense.Error);
@@ -38,7 +38,7 @@ namespace ExpenseTracker.Web.Pages.Expense
 
             CategoryList = expense.Value;
 
-            var all = await _ex.GetAllExpensesAsync();
+            var all = await _ex.GetAllExpensesAsync(HttpContext.RequestAborted);
 
             Expenses = all.Value.ToList(); 
 
@@ -53,7 +53,7 @@ namespace ExpenseTracker.Web.Pages.Expense
 
         public async Task<IActionResult> OnPostDeleteAsync(Guid id, string? categoryName)
         {     
-            await _ex.Delete(id);
+            await _ex.Delete(id, HttpContext.RequestAborted);
             return RedirectToPage(new { categoryName = categoryName }); // возвращает страницу с сортировкой
         }
     }

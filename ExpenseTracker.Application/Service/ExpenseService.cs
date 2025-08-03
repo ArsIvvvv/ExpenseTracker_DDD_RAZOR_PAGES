@@ -11,6 +11,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace ExpenseTracker.Application.Service
@@ -25,10 +26,10 @@ namespace ExpenseTracker.Application.Service
         }
 
         
-        public async Task <Result<ExpenseDto>> AddExpenseAsync(CreateExpenseCommand command)
+        public async Task <Result<ExpenseDto>> AddExpenseAsync(CreateExpenseCommand command, CancellationToken cancellationToken)
         {
             var ex = new Expense(command.Description, new Money(command.Amount),new Category(command.Category), command.Date);
-            await _repositoty.AddAsync(ex);
+            await _repositoty.AddAsync(ex,cancellationToken);
 
             var expense = new ExpenseDto
             {
@@ -42,13 +43,13 @@ namespace ExpenseTracker.Application.Service
             return Result<ExpenseDto>.Success(expense);
         }
 
-        public async Task<Result<ExpenseDto>> Delete(Guid expenseId)
+        public async Task<Result<ExpenseDto>> Delete(Guid expenseId, CancellationToken cancellationToken)
         {
-            var ex = await _repositoty.GetExpenseById(expenseId);
+            var ex = await _repositoty.GetExpenseById(expenseId,cancellationToken);
             if (ex == null)
                 return Result<ExpenseDto>.Failure("Нету такого расходы по Id");
 
-            await _repositoty.DeleteAsync(ex);
+            await _repositoty.DeleteAsync(ex,  cancellationToken);
             var expense =  new ExpenseDto
             {
                 Id = ex.Id,
@@ -62,19 +63,19 @@ namespace ExpenseTracker.Application.Service
 
         }
 
-        public async Task <Result<List<string>>> GetAllCategory()
+        public async Task <Result<List<string>>> GetAllCategory(CancellationToken cancellationToken)
         {
-           var list =  await _repositoty.GetAllAvailableCategoriesAsync();
+           var list =  await _repositoty.GetAllAvailableCategoriesAsync(cancellationToken);
             if (list == null)
                 return Result<List<string>>.Failure("Cписок категорий пуст");
 
             return Result<List<string>>.Success(list);
         }
 
-        public async Task <Result<IEnumerable<ExpenseDto>>> GetAllExpensesAsync()
+        public async Task <Result<IEnumerable<ExpenseDto>>> GetAllExpensesAsync(CancellationToken cancellationToken)
         {
 
-            var ex = await _repositoty.GetAllAsync();
+            var ex = await _repositoty.GetAllAsync(cancellationToken);
             if (ex == null)
                 return Result<IEnumerable<ExpenseDto>>.Failure("Список расходов пуст");
 

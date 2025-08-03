@@ -10,15 +10,43 @@ namespace ExpenseTracker.Domain.Repository
 {
     public interface IExpenseRepositoty
     {
-        Task AddAsync(Expense expense);
+        /// <summary>
+        /// Добаляет расход.
+        /// </summary>
+        /// <param name="expense"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        Task AddAsync(Expense expense, CancellationToken cancellationToken);
 
-        Task DeleteAsync(Expense expense);
+        /// <summary>
+        /// Удаляет расход.
+        /// </summary>
+        /// <param name="expense"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        Task DeleteAsync(Expense expense, CancellationToken cancellationToken);
 
-        Task<IEnumerable<Expense>> GetAllAsync();
+        /// <summary>
+        /// Возвращает все расходы.
+        /// </summary>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        Task<IEnumerable<Expense>> GetAllAsync(CancellationToken cancellationToken);
 
-        Task <Expense?> GetExpenseById(Guid id);
+        /// <summary>
+        /// Возвращает расход по id.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns>Expense</returns>
+        Task<Expense?> GetExpenseById(Guid id, CancellationToken cancellationToken);
 
-        Task<List<string>>GetAllAvailableCategoriesAsync();
+        /// <summary>
+        /// Возвращает категории для сортировки.
+        /// </summary>
+        /// <param name="cancellationToken"></param>
+        /// <returns>List<string></returns>
+        Task<List<string>>GetAllAvailableCategoriesAsync(CancellationToken cancellationToken);
 
 
     }
