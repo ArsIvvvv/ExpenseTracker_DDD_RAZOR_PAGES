@@ -28,6 +28,31 @@
                             <a class="nav-link text-light" asp-area="" asp-page="/Expense/Expense">Расходы</a>
                         </li>
                     </ul>
+
+                    <ul class="navbar-nav ms-auto">
+
+                        @if (User.Identity?.IsAuthenticated == false)
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" asp-page="/Account/Login">Вход</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" asp-page="/Account/Register">Регистрация</a>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="nav-item">
+                                <form method="post" asp-page="/Account/Logout" class="d-inline">
+                                    <button type="submit" class="nav-link btn btn-link text-light">Выйти</button>
+                                </form>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link active"> Hello @User.Identity.Name!</a>
+                            </li>
+                        }
+                    </ul>
                 </div>
             </div>
         </nav>

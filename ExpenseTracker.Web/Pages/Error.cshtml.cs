@@ -8,7 +8,7 @@ namespace ExpenseTracker.Web.Pages
     {
         public void OnGet()
         {
-          
+            
         }
     }
 

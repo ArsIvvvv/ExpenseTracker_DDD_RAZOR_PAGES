@@ -13,15 +13,39 @@ namespace ExpenseTracker.Infrastructure.Data
     public class ExpenseDbContext: DbContext
     {
         public DbSet<Expense> Expenses { get; set; }
+        public DbSet<User> Users { get; set; }
         public DbSet<AvailableCategory> AvailableCategories { get; set; }
 
         public ExpenseDbContext(DbContextOptions options) : base(options) { }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            //Конфигурация User
+            modelBuilder.Entity<User>(e =>
+            {
+
+                e.OwnsOne(x => x.Email, a =>
+                {
+                    a.Property(x => x.Value)
+                    .IsRequired();
+                });
+
+                e.OwnsOne(x => x.Password, a =>
+                {
+                    a.Property(x => x.HashValue)
+                    .IsRequired();
+                });
+
+                e.HasMany(u => u.Expenses)
+                .WithOne(s => s.User)
+                .HasForeignKey(s => s.UserId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            });
+
+            //Конфигурация Expense
             modelBuilder.Entity<Expense>(e =>
             {
-                e.HasKey(e => e.Id);
 
                 e.OwnsOne(x => x.Money, a =>
                 {
@@ -37,6 +61,7 @@ namespace ExpenseTracker.Infrastructure.Data
                     a.Property(x => x.Name)
                     .IsRequired();
                 });
+
             });
 
             var category = new[]

@@ -1,9 +1,10 @@
+using ExpenseTracker.Application.Interface;
+using ExpenseTracker.Application.Service;
 using ExpenseTracker.Domain.Repository;
 using ExpenseTracker.Infrastructure.Data;
 using ExpenseTracker.Infrastructure.Repository;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
-using ExpenseTracker.Application.Interface;
-using ExpenseTracker.Application.Service;
 
 namespace ExpenseTracker.Web
 {
@@ -24,6 +25,17 @@ namespace ExpenseTracker.Web
 
             builder.Services.AddScoped<IExpenseRepositoty, ExpenseRepository>();
             builder.Services.AddScoped<IExpenseService, ExpenseService>();
+            builder.Services.AddScoped<IUserRepository, UserRepository>();
+            builder.Services.AddScoped<IUserService, UserService>();
+
+            builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+            .AddCookie(options =>
+            {
+                options.LoginPath = "/Account/Login";
+                options.LogoutPath = "/Account/Logout";
+                options.AccessDeniedPath = "/AccessDenied";
+                options.ExpireTimeSpan = TimeSpan.FromDays(1); 
+            });
             var app = builder.Build();
 
             
@@ -34,14 +46,13 @@ namespace ExpenseTracker.Web
                 app.UseHsts();
             }
 
-
             app.UseStatusCodePagesWithReExecute("/Error");
-
             app.UseSession();
             app.UseHttpsRedirection();
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.MapStaticAssets();

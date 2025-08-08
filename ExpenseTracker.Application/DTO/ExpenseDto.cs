@@ -10,6 +10,7 @@ namespace ExpenseTracker.Application.DTO
     public class ExpenseDto
     {
         public Guid Id { get; set; }
+        public Guid UserId { get; set; }
         public string Description { get; set; } = string.Empty;
         public Money Money {  get; set; }
         public Category Category {  get; set; }

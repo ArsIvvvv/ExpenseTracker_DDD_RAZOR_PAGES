@@ -20,31 +20,31 @@ namespace ExpenseTracker.Infrastructure.Repository
             _dbContext = dbContext;
         }
 
-        public async Task AddAsync(Expense expense, CancellationToken cancellationToken)
+        public async Task AddAsync(Expense expense)
         {
             await _dbContext.Expenses.AddAsync(expense); 
-             await _dbContext.SaveChangesAsync(cancellationToken);
+             await _dbContext.SaveChangesAsync();
         }
 
-        public async Task DeleteAsync(Expense expense, CancellationToken cancellationToken)
+        public async Task DeleteAsync(Expense expense)
         {
              _dbContext.Expenses.Remove(expense);
-            await _dbContext.SaveChangesAsync(cancellationToken);
+            await _dbContext.SaveChangesAsync();
         }
 
-        public async Task<IEnumerable<Expense>?> GetAllAsync(CancellationToken cancellationToken)
+        public async Task<IEnumerable<Expense>?> GetAllAsync(Guid userId, CancellationToken cancellationToken)
         {
-           return await _dbContext.Expenses.ToListAsync(cancellationToken);
+           return await _dbContext.Expenses.Where(s => s.UserId == userId).ToListAsync(cancellationToken);
         }
 
-        public async Task<List<string>> GetAllAvailableCategoriesAsync(CancellationToken cancellationToken)
+        public async Task<List<string>> GetAllAvailableCategoriesAsync()
         {
-             return await _dbContext.AvailableCategories.Select(c => c.Name).AsNoTracking().ToListAsync(cancellationToken);
+             return await _dbContext.AvailableCategories.Select(c => c.Name).ToListAsync();
         }
 
-        public async Task<Expense?> GetExpenseById(Guid id, CancellationToken cancellationToken)
+        public async Task<Expense?> GetExpenseByUser(Guid userId, Guid id, CancellationToken cancellationToken)
         {
-            return await _dbContext.Expenses.FirstOrDefaultAsync(x => x.Id == id, cancellationToken);
+            return await _dbContext.Expenses.Where(s => s.Id == id && s.UserId == userId).FirstOrDefaultAsync(cancellationToken);
         }
     }
 }

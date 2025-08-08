@@ -9,7 +9,8 @@ using System.Threading.Tasks;
 namespace ExpenseTracker.Application.DTO.Command
 {
     public class CreateExpenseCommand
-    { 
+    {
+            public Guid UserId { get; set; }
             public string Description { get; set; } = string.Empty;
             public decimal Amount { get; set; }
             public string Category { get; set; } = string.Empty;

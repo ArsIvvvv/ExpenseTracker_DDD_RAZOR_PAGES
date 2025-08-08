@@ -1,22 +1,28 @@
 using ExpenseTracker.Application.DTO.Command;
 using ExpenseTracker.Application.Interface;
+using ExpenseTracker.Domain.Entities;
 using ExpenseTracker.Domain.Value_Object;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.ComponentModel.DataAnnotations;
+using System.Security.Claims;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace ExpenseTracker.Web.Pages.Expense
 {
+    [Authorize]
     public class CreateExpenseModel : PageModel
     {
         private readonly IExpenseService _ex;
+        private readonly IUserService _userService;
 
         public List<string> CategoryList { get; set; } = new();
 
-        public CreateExpenseModel(IExpenseService ex)
+        public CreateExpenseModel(IExpenseService ex, IUserService userService)
         {
-            _ex = ex;      
+           _ex = ex;      
+           _userService = userService;
         }
 
         [BindProperty]
@@ -24,7 +30,7 @@ namespace ExpenseTracker.Web.Pages.Expense
 
         public async Task <IActionResult> OnGetAsync() {
 
-            var expense =  await _ex.GetAllCategory(HttpContext.RequestAborted);
+            var expense =  await _ex.GetAllCategory();
             if (!expense.IsSuccess) 
             { 
                 ModelState.AddModelError(string.Empty, expense.Error);
@@ -32,12 +38,14 @@ namespace ExpenseTracker.Web.Pages.Expense
             }
             CategoryList = expense.Value;
             return Page();
-        }
+        }   
+
         public async Task<IActionResult> OnPostAsync()
         {
+
             if (!ModelState.IsValid)
             {
-                var expense = await _ex.GetAllCategory(HttpContext.RequestAborted);
+                var expense = await _ex.GetAllCategory();
                 if (!expense.IsSuccess)
                 {
                     ModelState.AddModelError(string.Empty, expense.Error);
@@ -47,8 +55,25 @@ namespace ExpenseTracker.Web.Pages.Expense
                 return Page();
             }
 
+            var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier);
+            if (userIdClaim == null)
+            {
+                ModelState.AddModelError(string.Empty, "Вы не зарегестрированы!");
+                return Page();
+            }
+
+            var userId = Guid.Parse(userIdClaim.Value);
+
+
+            var result = await _userService.GetByIdAsync(userId, HttpContext.RequestAborted);
+            if (!result.IsSuccess)
+            {
+                return RedirectToPage("/Account/Login");
+            }
+
             var command = new CreateExpenseCommand
             {
+                UserId = userId,
                 Description = Input.Description,
                 Amount = Input.Amount,
                 Category = Input.Category,
@@ -79,6 +104,5 @@ namespace ExpenseTracker.Web.Pages.Expense
         [DataType(DataType.Date)]
         public DateTime Date { get; set; }
     }
-
 
 }
